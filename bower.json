@@ -1,0 +1,21 @@
+{
+  "name": "scorecard",
+  "description": "",
+  "main": "",
+  "authors": [
+    "brandon <bcooper085@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.100.0",
+    "bootstrap": "^3.3.7"
+  }
+}
