@@ -7,9 +7,16 @@ import { Course } from '../course.model';
   templateUrl: './my-courses.component.html',
   styleUrls: ['./my-courses.component.css']
 })
+
 export class MyCoursesComponent {
   courses: Course[] = [
-    new Course("Green River", 72),
-    new Course("North Shore", 71)
+    new Course("Green River", 92, 72, 1),
+    new Course("North Shore", 96, 71, 2)
   ];
+
+  constructor(private router: Router){}
+
+  goToDetailPage(clickedCourse) {
+    this.router.navigate(['courses', clickedCourse.id]);
+  };
 }

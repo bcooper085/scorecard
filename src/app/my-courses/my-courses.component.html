@@ -1,5 +1,8 @@
 <h2>My Courses</h2>
 
-<div *ngFor="let course of courses">
-  <h3>{{course.name}} Course Par:{{course.coursePar}}</h3>
+<div *ngFor="let course of courses" class="panel panel-default">
+  <div class="panel-body">
+    <h3 (click)="goToDetailPage(course)"><b>{{course.name}}</b></h3>
+    <h4>Score: <em>{{course.score}}</em> - Course Par: <em>{{course.coursePar}}</em></h4>
+  </div>
 </div>
