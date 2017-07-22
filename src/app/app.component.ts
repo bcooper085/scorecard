@@ -8,4 +8,14 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   //Login Routing
+
+  constructor(private router: Router){}
+
+  goToMyCourses() {
+    this.router.navigate(['mycourses']);
+  };
+
+  goHome() {
+    this.router.navigate(['']);
+  };
 }

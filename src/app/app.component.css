@@ -1,0 +1,18 @@
+.main-nav {
+  background: grey;
+  padding: 3.5em;
+  border-bottom: 1px solid green;
+}
+
+.nav-link {
+  padding: .3em;
+  float: right;
+  margin: -1em 1em;
+  color: white;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: green;
+}
