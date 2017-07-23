@@ -1,6 +1,17 @@
 <h2>My Courses</h2>
+<h3>Add New Course</h3>
+<div>
+  <div>
+    <input #newName placeholder="Course Name">
+    <br>
+    <input #newScore placeholder="My Score">
+    <br>
+    <input #newCoursePar placeholder="Course Par">
+  </div>
+  <button class="btn btn-success" (click)="submitForm(newName.value, newScore.value, newCoursePar.value); newName.value=''; newScore.value=''; newCoursePar.value='';">Add Course</button>
+</div>
 
-<div *ngFor="let course of courses" class="panel panel-default">
+<div *ngFor="let course of courses | async" class="panel panel-default">
   <div class="panel-heading">
     <h3 (click)="goToDetailPage(course)"><b>{{course.name}}</b></h3>
   </div>

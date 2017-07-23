@@ -8,6 +8,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { RouterModule, Routes } from "@angular/router";
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -15,16 +18,27 @@ const routes: Routes = [
   { path: 'courses/:id', component: CourseDetailComponent }
 ];
 
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
+
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     MyCoursesComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
