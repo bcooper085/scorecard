@@ -1,14 +1,19 @@
 <h2>My Courses</h2>
-<h3>Add New Course</h3>
-<div>
-  <div>
-    <input #newName placeholder="Course Name">
-    <br>
-    <input #newScore placeholder="My Score">
-    <br>
-    <input #newCoursePar placeholder="Course Par">
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 well">
+    <h3>Add New Course</h3>
+    <div>
+      <div>
+        <input #newName placeholder="Course Name">
+        <br>
+        <input #newScore placeholder="My Score">
+        <br>
+        <input #newCoursePar placeholder="Course Par">
+      </div>
+      <button class="btn btn-success" (click)="submitForm(newName.value, newScore.value, newCoursePar.value); newName.value=''; newScore.value=''; newCoursePar.value='';">Add Course</button>
+    </div>
   </div>
-  <button class="btn btn-success" (click)="submitForm(newName.value, newScore.value, newCoursePar.value); newName.value=''; newScore.value=''; newCoursePar.value='';">Add Course</button>
 </div>
 
 <div *ngFor="let course of courses | async" class="panel panel-default">

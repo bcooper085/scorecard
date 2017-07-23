@@ -1,7 +1,7 @@
 .main-nav {
   background: grey;
   padding: 3.5em;
-  border-bottom: 1px solid green;
+  border-bottom: 2px solid #5cb85c;
 }
 
 .nav-link {
@@ -14,5 +14,5 @@
 .nav-link:hover {
   text-decoration: none;
   cursor: pointer;
-  color: green;
+  color: #5cb85c;
 }
