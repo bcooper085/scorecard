@@ -1,3 +1,3 @@
 export class Course {
-  constructor (public name: string, public score: number, public coursePar: number) {}
+  constructor (public name: string, public scores: number[], public coursePar: number) {}
 }

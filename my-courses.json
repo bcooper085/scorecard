@@ -1,0 +1,18 @@
+{
+  "courses": [{
+    "name": "Green River",
+    "scores": 90,
+    "coursePar": 72,
+    "id": 1
+  }, {
+    "name": "North Shore",
+    "scores": 90,
+    "coursePar": 72,
+    "id": 2
+  }, {
+    "name": "Pelican Hill",
+    "scores": 90,
+    "coursePar": 72,
+    "id": 3
+    }]
+}

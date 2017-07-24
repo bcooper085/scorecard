@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Course } from '../course.model';
-import { CourseService } from '../course.service';
+import { Course } from '../../course.model';
+import { CourseService } from '../../course.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
@@ -25,8 +25,13 @@ export class MyCoursesComponent implements OnInit {
     this.router.navigate(['courses', clickedCourse.$key]);
   }
 
-  submitForm(name: string, score: number, coursePar: number) {
-    var newCourse: Course = new Course(name, score, coursePar);
+  submitForm(name: string, scores: number[], coursePar: number) {
+    var newCourse: Course = new Course(name, scores, coursePar);
     this.courseService.addCourse(newCourse);
   }
+
+  // submitScore(scores: number){
+  //   this.courseService.addScore(scores)
+  // }
+
 }

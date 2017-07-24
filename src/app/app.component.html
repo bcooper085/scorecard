@@ -1,9 +1,20 @@
-<div class="row">
-  <div class="main-nav">
-    <a class="nav-link" (click)="goToMyCourses()">My Courses</a>
-    <a class="nav-link" (click)="goHome()">Home</a>
+<nav class=navbar>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">The Scorecard</a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/']">Home</a></li>
+        <li><a [routerLink]="['/mycourses']">My Courses</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="">Login</a></li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
+
 <div class="container">
   <router-outlet></router-outlet>
 </div>

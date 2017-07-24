@@ -18,8 +18,23 @@ export class CourseService {
     this.courses.push(newCourse)
   }
 
+  // addScore(thisCourse, scores){
+  //   var firebaseCourse = this.getCourseById(thisCourse.$key);
+  //   firebaseCourse.push({scores: thisCourse.scores});
+  // }
+
   getCourseById(courseId: string){
     return this.database.object('courses/' + courseId);
+  }
+
+  updateCourse(thisCourse){
+    var firebaseCourse = this.getCourseById(thisCourse.$key);
+    firebaseCourse.update({name: thisCourse.name, coursePar: thisCourse.coursePar});
+  }
+
+  deleteCourse(thisCourseDelete){
+    var firebaseCourse = this.getCourseById(thisCourseDelete.$key);
+    firebaseCourse.remove();
   }
 
 }
