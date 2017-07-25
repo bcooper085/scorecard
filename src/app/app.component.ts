@@ -29,9 +29,11 @@ export class AppComponent {
 
   login() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.router.navigate(['mycourses']);
   }
 
   logout() {
     this.afAuth.auth.signOut();
+    this.router.navigate(['/']);
   }
 }

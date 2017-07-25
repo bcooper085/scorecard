@@ -13,8 +13,9 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 })
 
 export class CourseDetailComponent implements OnInit {
-  courseId;
-  getCourse;
+  courseId: any;
+  getCourse: any;
+  course: any;
 
   constructor(private route: ActivatedRoute, private location: Location, private courseService: CourseService) { }
 
@@ -23,7 +24,17 @@ export class CourseDetailComponent implements OnInit {
       this.courseId = urlParameters['id'];
     });
 
+    this.courseService.getCourseDetails(this.courseId).subscribe(course => {
+      this.course = course;
+      console.log(course)
+    })
+
     this.getCourse = this.courseService.getCourseById(this.courseId);
+
   }
+
+  // submitScore(scores){
+  //   this.courseService.addScore(scores)
+  // }
 
 }

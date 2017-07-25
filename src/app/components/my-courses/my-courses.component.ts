@@ -22,7 +22,7 @@ export class MyCoursesComponent implements OnInit {
   }
 
   goToDetailPage(clickedCourse) {
-    this.router.navigate(['courses', clickedCourse.$key]);
+    this.router.navigate(['course', clickedCourse.$key]);
   }
 
   submitForm(name: string, scores: number[], coursePar: number) {
