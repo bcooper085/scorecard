@@ -4,12 +4,14 @@
       <a class="navbar-brand" href="#">The Scorecard</a>
     </div>
     <div id="navbar">
+
       <ul class="nav navbar-nav">
         <li><a [routerLink]="['/']">Home</a></li>
-        <li><a [routerLink]="['/mycourses']">My Courses</a></li>
+        <li *ngIf="(user | async)"><a [routerLink]="['/mycourses']">My Courses</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="">Login</a></li>
+        <li *ngIf="!(user | async)"><a (click)="login()">Login</a></li>
+        <li *ngIf="(user | async)"><a (click)="logout()">Logout</a></li>
       </ul>
     </div>
   </div>

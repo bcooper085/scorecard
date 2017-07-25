@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Course } from './course.model';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+
 
 @Injectable()
 export class CourseService {
