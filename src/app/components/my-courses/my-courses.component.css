@@ -8,7 +8,10 @@ input {
 
 .view-details:hover {
   cursor: pointer;
+  background-color: #5cb85c;
+  color: white;
 }
+
 
 #submit-course {
   margin-top: 2%;
@@ -16,6 +19,10 @@ input {
 
 .course-grid {
   margin-top: 2%;
+}
+
+.panel-body {
+  border-bottom: 1px solid red;
 }
 
 .course-par {

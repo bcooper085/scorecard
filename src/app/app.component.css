@@ -11,5 +11,6 @@
 }
 
 .navbar-fixed-bottom {
-  padding-top: 1%;
+  padding: 1%;
+  border-top: 1px solid green;
 }

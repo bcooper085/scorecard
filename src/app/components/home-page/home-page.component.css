@@ -5,3 +5,7 @@ img {
 img:hover {
   cursor: pointer;
 }
+
+.jumbotron {
+  margin-top: 5%;
+}

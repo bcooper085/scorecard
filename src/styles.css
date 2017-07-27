@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 
 body {
-  height: 100vh;
   font-family: Orbitron;
   background: url('./assets/img/golfer-background.jpg') no-repeat;
   background-position: right top;
