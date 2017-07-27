@@ -14,6 +14,19 @@ input {
   margin-top: 2%;
 }
 
+.course-par {
+  margin-left: 3%;
+}
+
+.edit-course-button {
+  margin-right: -2%;
+  margin-top: -5%;
+}
+
+.each-course {
+  margin-bottom: 5%;
+}
+
 .glyphicon-remove-sign {
   font-size: 2em;
   margin-top: -8%;

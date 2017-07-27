@@ -25,18 +25,21 @@
 </div>
 
 <div class="course-grid">
-  <div *ngFor="let course of courses | async" >
-    <div class="col-md-6">
+  <div *ngFor="let course of courses | async">
+    <div class="col-md-6 each-course">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 (click)="goToDetailPage(course)"><b>{{course.name}}</b></h3>
+          <span class="course-par">Course Par: <em>{{course.coursePar}}</em></span>
+          <app-edit-course [selectedCourse]="course" class="edit-course-button pull-right"></app-edit-course>
         </div>
         <div class="panel-body">
-          <h4>Course Par: <em>{{course.coursePar}}</em></h4>
+          <h4>Course Average: <em>{{course.coursePar}}</em></h4>
+          <h3>Course Best: <em>{{course.coursePar}}</em></h3>
 
           <!-- <h4>Add Score: <input #addScore placeholder="Score"><button class="btn btn-success" (click)="submitScore(addScore.value); addScore.value='';">Add</button></h4> -->
 
-          <app-edit-course [selectedCourse]="course"></app-edit-course>
+
         </div>
       </div>
     </div>
