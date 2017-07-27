@@ -1,3 +1,11 @@
 .navbar a {
   color: #5cb85c;
 }
+
+.logout:hover {
+  cursor: pointer
+}
+
+.login:hover {
+  cursor: pointer
+}

@@ -1,5 +1,12 @@
-<div class="jumbotron text-center col-md-10 col-md-offset-1">
-  <h2>Welcome to The Scorecard</h2>
-  <p>Sign in to track your golf</p>
-  <a href=""><img src="assets/img/google.png"></a>
+<div class="jumbotron text-center col-md-8 col-md-offset-2">
+  <div class="row">
+    <h2 *ngIf="(user | async)">Welcome to The Scorecard</h2>
+    <p *ngIf="!(user | async)">Sign in to track your golf</p>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <a *ngIf="!(user | async)" (click)="login()"><img src="assets/img/google.png"></a>
+      <a *ngIf="(user | async)" [routerLink]="['/mycourses']" class="btn btn-success">My Courses</a>
+    </div>
+  </div>
 </div>

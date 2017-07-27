@@ -12,22 +12,29 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 
 export class MyCoursesComponent implements OnInit {
+  addMyCourse: boolean;
   courses: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+
 
   constructor(private router: Router, private courseService: CourseService){}
 
   ngOnInit(){
     this.courses = this.courseService.getCourses();
+    this.addMyCourse = false;
   }
 
   goToDetailPage(clickedCourse) {
     this.router.navigate(['course', clickedCourse.$key]);
   }
 
-  submitForm(name: string, scores: number[], coursePar: number) {
-    var newCourse: Course = new Course(name, scores, coursePar);
+  submitForm(name: string, scores: number[], coursePar: number, image: any) {
+    var newCourse: Course = new Course(name, scores, coursePar, image);
     this.courseService.addCourse(newCourse);
+  }
+
+  addTheCourse(){
+    this.addMyCourse = !this.addMyCourse;
   }
 
   // submitScore(scores: number){

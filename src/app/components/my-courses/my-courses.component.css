@@ -1,3 +1,21 @@
 .col-md-offset-4 {
   text-align: center;
 }
+
+input {
+  font-size: 1.3em;
+}
+
+#submit-course {
+  margin-top: 2%;
+}
+
+.course-grid {
+  margin-top: 2%;
+}
+
+.glyphicon-remove-sign {
+  font-size: 2em;
+  margin-top: -8%;
+  margin-right: -8%;
+}

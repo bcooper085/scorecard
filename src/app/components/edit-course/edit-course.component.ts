@@ -10,10 +10,12 @@ import { CourseService } from '../../course.service';
 })
 export class EditCourseComponent implements OnInit {
   @Input() selectedCourse;
+  editCourse: boolean;
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService){}
 
   ngOnInit() {
+    this.editCourse = false;
   }
 
   submitCourseUpdate(thisCourse){
@@ -22,6 +24,10 @@ export class EditCourseComponent implements OnInit {
 
   submitCourseDelete(thisCourseDelete){
     this.courseService.deleteCourse(thisCourseDelete);
+  }
+
+  expand(){
+    this.editCourse = !this.editCourse;
   }
 
 }

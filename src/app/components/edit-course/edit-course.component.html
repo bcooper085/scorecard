@@ -1,7 +1,12 @@
-<p>Edit Course</p>
-<input [(ngModel)]="selectedCourse.name">
-<br>
-<input [(ngModel)]="selectedCourse.coursePar">
-<br>
-<button (click)="submitCourseUpdate(selectedCourse)" class="btn btn-primary">Save</button>
-<button (click)="submitCourseDelete(selectedCourse)" class="btn btn-danger">Delete</button>
+<div>
+  <button (click)="expand()" data-target="#edit-data" class="btn btn-warning">Edit Course</button>
+
+  <div *ngIf="editCourse">
+    <input [(ngModel)]="selectedCourse.name">
+    <br>
+    <input [(ngModel)]="selectedCourse.coursePar">
+    <br>
+    <button (click)="submitCourseUpdate(selectedCourse)" class="btn btn-primary">Save</button>
+    <button (click)="submitCourseDelete(selectedCourse)" class="btn btn-danger">Delete</button>
+  </div>
+</div>

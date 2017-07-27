@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 import { masterFirebaseConfig } from './api-keys';
 import { CourseService } from './course.service';
 import * as firebase from 'firebase/app';
@@ -46,7 +47,8 @@ const routes: Routes = [
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlashMessagesModule
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]
