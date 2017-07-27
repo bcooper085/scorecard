@@ -28,14 +28,18 @@
   <div *ngFor="let course of courses | async">
     <div class="col-md-6 each-course">
       <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 (click)="goToDetailPage(course)"><b>{{course.name}}</b></h3>
-          <span class="course-par">Course Par: <em>{{course.coursePar}}</em></span>
-          <app-edit-course [selectedCourse]="course" class="edit-course-button pull-right"></app-edit-course>
+        <div (click)="goToDetailPage(course)" class="panel-heading view-details">
+          <h3><b>{{course.name}}</b></h3>
         </div>
         <div class="panel-body">
-          <h4>Course Average: <em>{{course.coursePar}}</em></h4>
-          <h3>Course Best: <em>{{course.coursePar}}</em></h3>
+          <div class="row">
+            <div class="col-md-6">
+             <h4>Course Par: <em>{{course.coursePar}}</em></h4>
+             <h4>My Average: <em>{{course.scores}}</em></h4>
+           </div>
+            <h3 class="col-md-6">Course Best: <em>{{course.scores}}</em></h3>
+          </div>
+
 
           <!-- <h4>Add Score: <input #addScore placeholder="Score"><button class="btn btn-success" (click)="submitScore(addScore.value); addScore.value='';">Add</button></h4> -->
 

@@ -9,3 +9,7 @@
 .login:hover {
   cursor: pointer
 }
+
+.navbar-fixed-bottom {
+  padding-top: 1%;
+}

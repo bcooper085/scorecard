@@ -1,7 +1,7 @@
 <div class="edit-input">
   <div class="each-course">
-    <button (click)="expand()" class="btn btn-warning btn-xs">Edit Course</button>
-    <div *ngIf="editCourse">
+    <button (click)="expand()" class="btn btn-warning btn-sm">Edit Course</button>
+    <div *ngIf="editCourse" class="well">
       <input [(ngModel)]="selectedCourse.name">
       <br>
       <input [(ngModel)]="selectedCourse.coursePar">

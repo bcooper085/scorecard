@@ -6,6 +6,10 @@ input {
   font-size: 1.3em;
 }
 
+.view-details:hover {
+  cursor: pointer;
+}
+
 #submit-course {
   margin-top: 2%;
 }
@@ -16,11 +20,6 @@ input {
 
 .course-par {
   margin-left: 3%;
-}
-
-.edit-course-button {
-  margin-right: -2%;
-  margin-top: -5%;
 }
 
 .each-course {
