@@ -11,21 +11,21 @@
         </div>
       </div>
       <div class="col-md-7">
-        <h2 class="page-header">Scores</h2>
+        <h3 class="page-header">Scores</h3>
         <h4>{{(getCourse | async)?.scores}}</h4>
         <div class="row">
           <div class="col-md-6">
-            <h3>Course Average: {{(getCourse | async)?.scores}}</h3>
+            <h3>Course Average: <em>{{(getCourse | async)?.scores}}</em></h3>
           </div>
           <div class="col-md-6">
-            <h3>Course Best: {{(getCourse | async)?.scores}}</h3>
+            <h3>Course Best: <em>{{(getCourse | async)?.scores}}</em></h3>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4 col-md-offset-1 well">
+    <div class="col-md-4 col-md-offset-1 well well-sm">
       <div class="score-panel">
         <h4>Add Score: <input id="new-score" #addScore placeholder="Score"><button class="btn btn-success btn-sm" (click)="submitScore(addScore.value); addScore.value='';">Add</button></h4>
       </div>
