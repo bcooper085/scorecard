@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Course } from '../../course.model';
+import { Score } from '../../score.model';
 import { CourseService } from '../../course.service';
-import { FirebaseObjectObservable } from 'angularfire2/database';
+import { FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-course-detail',
@@ -13,6 +14,7 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 })
 
 export class CourseDetailComponent implements OnInit {
+  scores: FirebaseListObservable<any[]>;
   courseId: any;
   getCourse: any;
   course: any;
@@ -20,6 +22,8 @@ export class CourseDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private location: Location, private courseService: CourseService) { }
 
   ngOnInit() {
+    this.scores = this.courseService.getScores()
+
     this.route.params.forEach((urlParameters) => {
       this.courseId = urlParameters['id'];
     });
@@ -30,11 +34,13 @@ export class CourseDetailComponent implements OnInit {
     })
 
     this.getCourse = this.courseService.getCourseById(this.courseId);
-
   }
 
-  // submitScore(scores){
-  //   this.courseService.addScore(scores)
-  // }
+  submitScore(score: number){
+    // var today = Date.now();
+    var date = new Date()
+    var newScore: Score = new Score (score, date)
+    this.courseService.addScore(newScore)
+  }
 
 }

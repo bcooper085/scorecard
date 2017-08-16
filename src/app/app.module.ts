@@ -48,7 +48,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    FlashMessagesModule
+    FlashMessagesModule,
   ],
   providers: [CourseService],
   bootstrap: [AppComponent]

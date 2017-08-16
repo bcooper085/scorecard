@@ -1,5 +1,8 @@
 # Scorecard
 
+Add your golf courses including course pictures and course stats. Track your scores and progress.
+
+Angular 2, Typescript, Firebase, Bootstrap
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.2.
 
 ## Development server

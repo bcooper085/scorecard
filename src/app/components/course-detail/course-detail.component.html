@@ -12,13 +12,16 @@
       </div>
       <div class="col-md-7">
         <h3 class="page-header">Scores</h3>
-        <h4>{{(getCourse | async)?.scores}}</h4>
+        <div *ngFor="let score of scores | async">
+        <h4>{{today | date}}{{score.score}}</h4>
+        </div>
         <div class="row">
           <div class="col-md-6">
-            <h3>Course Average: <em>{{(getCourse | async)?.scores}}</em></h3>
+            <h3>My Average: <em>{{(getCourse | async)?.scores}}</em></h3>
+            <h3>Course par: <em>{{(getCourse | async)?.coursePar}}</em></h3>
           </div>
           <div class="col-md-6">
-            <h3>Course Best: <em>{{(getCourse | async)?.scores}}</em></h3>
+            <h2>Course Best: <em>{{(getCourse | async)?.scores}}</em></h2>
           </div>
         </div>
       </div>
@@ -26,9 +29,12 @@
   </div>
   <div class="row">
     <div class="col-md-4 col-md-offset-1 well well-sm">
+
       <div class="score-panel">
-        <h4>Add Score: <input id="new-score" #addScore placeholder="Score"><button class="btn btn-success btn-sm" (click)="submitScore(addScore.value); addScore.value='';">Add</button></h4>
+        <h4>Add Score: <input id="new-score" #addScore placeholder="Score">
+          <button class="btn btn-success btn-sm" (click)="submitScore(addScore.value); addScore.value='';">Add</button></h4>
       </div>
+
     </div>
     <app-edit-course [selectedCourse]="course" class="edit-course-button pull-right"></app-edit-course>
   </div>
